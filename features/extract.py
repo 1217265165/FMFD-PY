@@ -127,7 +127,8 @@ def compute_nonswitch_steps(frequency, amp, band_ranges, tol=0.3, block=200, mar
     steps_abs = np.abs(steps)
     count = int(np.sum(steps_abs > tol))
     ratio = count / total_blocks
-    max_step = float(np.max(steps_abs)) if steps_abs else 0.0
+    # FIX: numpy 数组不可直接做布尔判断
+    max_step = float(np.max(steps_abs)) if steps_abs.size > 0 else 0.0
     return max_step, ratio, count, total_blocks
 
 # ---------------- 汇总系统特征 ----------------

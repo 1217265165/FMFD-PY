@@ -18,10 +18,20 @@ def simulate_fault_dataset(baseline, n_samples=120, seed=0):
     rrs = baseline["rrs"]
     band_ranges = baseline["band_ranges"]
     data = []
+
     kinds = ["amp", "freq", "rl", "att", "preamp", "lpf", "mixer", "ytf",
              "clock", "lo", "adc", "vbw", "power", "normal"]
     probs = [0.12, 0.12, 0.12, 0.08, 0.08, 0.06, 0.06, 0.06,
              0.06, 0.06, 0.06, 0.06, 0.06, 0.1]
+
+    # 归一化概率，避免 numpy 报 probabilities do not sum to 1
+    probs = np.array(probs, dtype=float)
+    s = probs.sum()
+    if s <= 0:
+        probs = np.ones_like(probs) / len(probs)
+    else:
+        probs = probs / s
+
     for _ in range(n_samples):
         amp0 = rrs + rng.normal(0, 0.05, size=len(rrs))
         kind = rng.choice(kinds, p=probs)

@@ -8,7 +8,7 @@ from FMFD.features.extract import extract_system_features
 
 def main():
     # 1) 基线
-    freq, traces, _ = load_and_align("./normal_response_data")
+    freq, traces, _ = load_and_align("../normal_response_data")
     rrs, bounds = compute_rrs_bounds(freq, traces, BAND_RANGES, K_LIST)
     baseline = {
         "frequency": freq,
