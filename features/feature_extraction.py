@@ -371,11 +371,3 @@ def compute_feature_matrix(raw_input, prefix="run_enh"):
         raise ValueError("raw_input must be a pandas.DataFrame or path to CSV")
     feat_df, module_meta_df, feat_summary_df, feature_importances = extract_enhanced_features(raw_df, prefix=prefix)
     return feat_df, module_meta_df
-
-# CLI
-if __name__ == "__main__":
-    input_csv = r"D:\PycharmProjects\FMFD\V2\acquired_measurements.csv"
-    prefix = "run_test"
-    raw = pd.read_csv(input_csv, encoding="utf-8")
-    extract_enhanced_features(raw, prefix=prefix)
-    print(f"[INFO] features extraction done. input={input_csv}, prefix={prefix}")

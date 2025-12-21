@@ -1,0 +1,3768 @@
+{
+  "normal_000": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_001": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_002": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_003": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_004": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_005": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_006": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_007": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_008": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_009": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_010": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_011": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_012": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_013": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_014": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_015": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_016": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_017": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_018": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_019": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_020": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_021": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_022": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_023": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_024": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_025": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_026": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_027": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_028": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_029": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_030": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_031": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_032": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_033": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_034": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_035": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_036": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_037": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_038": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_039": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_040": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_041": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_042": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_043": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_044": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_045": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_046": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_047": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_048": {
+    "type": "normal",
+    "faults": []
+  },
+  "normal_049": {
+    "type": "normal",
+    "faults": []
+  },
+  "fault_000": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.9392065709229025
+      }
+    ]
+  },
+  "fault_001": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.4578831971062387
+      }
+    ]
+  },
+  "fault_002": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.817451565664075
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.1602088414435216,
+        "f_start_Hz": 39387988343.22357,
+        "f_end_Hz": 51260943139.27169
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 59300000000.0,
+        "delta_db": 2.6886519799492836
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 55350000000.0,
+        "delta_db": 3.279788646725833
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 51400000000.0,
+        "delta_db": 2.054439410880625
+      }
+    ]
+  },
+  "fault_003": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -1.7897920959296754e-05
+      }
+    ]
+  },
+  "fault_004": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 47750000000.0,
+        "delta_db": 1.5870195713279065
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 42450000000.0,
+        "delta_db": 3.4379130793654182
+      }
+    ]
+  },
+  "fault_005": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.8150813310297804
+      }
+    ]
+  },
+  "fault_006": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.5575078281459985
+      }
+    ]
+  },
+  "fault_007": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.0220356919559757
+      }
+    ]
+  },
+  "fault_008": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -0.0001273445238325405
+      }
+    ]
+  },
+  "fault_009": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 1.5606163850310069
+      }
+    ]
+  },
+  "fault_010": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.48894196140024543,
+        "f_start_Hz": 7321232943.14739,
+        "f_end_Hz": 18733424725.639328
+      }
+    ]
+  },
+  "fault_011": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.5744857545314445
+      }
+    ]
+  },
+  "fault_012": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.10992801823361414,
+        "f_start_Hz": 32498352554.605957,
+        "f_end_Hz": 41886442524.395905
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 19500000000.0,
+        "delta_db": 3.678758620073373
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 16000000000.0,
+        "delta_db": 2.9465071050779694
+      }
+    ]
+  },
+  "fault_013": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.3344399591364766
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 25600000000.0,
+        "delta_db": 3.3635945667418166
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 60950000000.0,
+        "delta_db": 3.235885780878331
+      }
+    ]
+  },
+  "fault_014": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.1035925930217334
+      }
+    ]
+  },
+  "fault_015": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5027061111348716,
+        "f_start_Hz": 33386650105.049717,
+        "f_end_Hz": 46133180998.372574
+      }
+    ]
+  },
+  "fault_016": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -2.183304457303002e-05
+      }
+    ]
+  },
+  "fault_017": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": []
+  },
+  "fault_018": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -1.8771910404240087e-06
+      }
+    ]
+  },
+  "fault_019": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -2.0686123514088383e-05
+      }
+    ]
+  },
+  "fault_020": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.39549447975005425,
+        "f_start_Hz": 14694598882.541481,
+        "f_end_Hz": 30947135939.177788
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 25650000000.0,
+        "delta_db": 3.8625195348821224
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 59850000000.0,
+        "delta_db": 2.194229128707276
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 11050000000.0,
+        "delta_db": 2.243321939829551
+      }
+    ]
+  },
+  "fault_021": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": []
+  },
+  "fault_022": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.13824928656543742,
+        "f_start_Hz": 31079016109.077744,
+        "f_end_Hz": 40251488898.215
+      }
+    ]
+  },
+  "fault_023": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 3.0377749436803574e-05
+      }
+    ]
+  },
+  "fault_024": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.899579987692307
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 20250000000.0,
+        "delta_db": 2.2564606167251893
+      }
+    ]
+  },
+  "fault_025": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.342494091336819
+      }
+    ]
+  },
+  "fault_026": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 3.182264530240569e-05
+      }
+    ]
+  },
+  "fault_027": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 6.981045108600847e-05
+      }
+    ]
+  },
+  "fault_028": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -7.192040667775051e-07
+      }
+    ]
+  },
+  "fault_029": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 0.00014704559367623081
+      }
+    ]
+  },
+  "fault_030": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 3.999584601434511e-05
+      }
+    ]
+  },
+  "fault_031": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -1.2933177653584138e-05
+      }
+    ]
+  },
+  "fault_032": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.1220239317476988
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 10650000000.0,
+        "delta_db": 1.729021540740995
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 7000000000.0,
+        "delta_db": 2.188247832750349
+      }
+    ]
+  },
+  "fault_033": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.6539924122329843,
+        "f_start_Hz": 43514195026.06242,
+        "f_end_Hz": 51561461453.984184
+      }
+    ]
+  },
+  "fault_034": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 0.00011335837736987337
+      }
+    ]
+  },
+  "fault_035": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.7495519085563552
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.3240045326119072,
+        "f_start_Hz": 24969829215.263466,
+        "f_end_Hz": 37240604788.53302
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 1400000000.0,
+        "delta_db": 1.3501991827856386
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 43450000000.0,
+        "delta_db": 2.900236870891375
+      }
+    ]
+  },
+  "fault_036": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -6.004585238902272e-05
+      }
+    ]
+  },
+  "fault_037": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.30685127455027283,
+        "f_start_Hz": 28045498810.783337,
+        "f_end_Hz": 36787698157.56886
+      }
+    ]
+  },
+  "fault_038": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.6543228284892137
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 770000.0,
+        "delta_db": 1.8959568971958656
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 6250000000.0,
+        "delta_db": 2.3209193409245836
+      }
+    ]
+  },
+  "fault_039": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.652374752028812
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.3057305017217519,
+        "f_start_Hz": 8205359441.291167,
+        "f_end_Hz": 21335201576.98131
+      }
+    ]
+  },
+  "fault_040": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5617981343066166,
+        "f_start_Hz": 5264995742.186837,
+        "f_end_Hz": 12405882788.327482
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 53950000000.0,
+        "delta_db": 1.3058752152904687
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 31700000000.0,
+        "delta_db": 3.747662156214605
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 7400000000.0,
+        "delta_db": 1.6930873214573623
+      }
+    ]
+  },
+  "fault_041": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.5255002544304728
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.24120901908637363,
+        "f_start_Hz": 26844291064.580795,
+        "f_end_Hz": 43591236124.70402
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 27000000000.0,
+        "delta_db": 2.803470766898777
+      }
+    ]
+  },
+  "fault_042": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.2181957023966707
+      }
+    ]
+  },
+  "fault_043": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.5743478909541135
+      }
+    ]
+  },
+  "fault_044": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 14350000000.0,
+        "delta_db": 1.4753809282823251
+      }
+    ]
+  },
+  "fault_045": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.143565167389167
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 59100000000.0,
+        "delta_db": 3.1138527993108447
+      }
+    ]
+  },
+  "fault_046": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.9194242625830168
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.37569198572456247,
+        "f_start_Hz": 35035405090.87179,
+        "f_end_Hz": 47291481831.05688
+      }
+    ]
+  },
+  "fault_047": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.2460002501219316
+      }
+    ]
+  },
+  "fault_048": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -3.402510997209362e-05
+      }
+    ]
+  },
+  "fault_049": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -6.559275826537747e-05
+      }
+    ]
+  },
+  "fault_050": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 9.762264313836388e-06
+      }
+    ]
+  },
+  "fault_051": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.30076247953093
+      }
+    ]
+  },
+  "fault_052": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.42301694092486
+      }
+    ]
+  },
+  "fault_053": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -2.901021154485681e-05
+      }
+    ]
+  },
+  "fault_054": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.1015898689815677
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.48542888019171826,
+        "f_start_Hz": 34309621430.836655,
+        "f_end_Hz": 43926226911.35703
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 38050000000.0,
+        "delta_db": 2.992588596752988
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 62000000000.0,
+        "delta_db": 1.8785711510262235
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 25700000000.0,
+        "delta_db": 3.5145357506378203
+      }
+    ]
+  },
+  "fault_055": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 5000000.0,
+        "delta_db": 1.2816993425250014
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 49650000000.0,
+        "delta_db": 2.2101673853931203
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 54400000000.0,
+        "delta_db": 1.7313525864758836
+      }
+    ]
+  },
+  "fault_056": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": []
+  },
+  "fault_057": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -4.49124643776655e-05
+      }
+    ]
+  },
+  "fault_058": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.3894907152944072
+      }
+    ]
+  },
+  "fault_059": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.18945092653130094,
+        "f_start_Hz": 44924270232.69291,
+        "f_end_Hz": 54029340053.55388
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 15600000000.0,
+        "delta_db": 2.1089332388509114
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 25300000000.0,
+        "delta_db": 3.8532993247703295
+      }
+    ]
+  },
+  "fault_060": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.8615307431187007
+      }
+    ]
+  },
+  "fault_061": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.1396714235945797
+      }
+    ]
+  },
+  "fault_062": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": []
+  },
+  "fault_063": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.876086644650403
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.20411398444542972,
+        "f_start_Hz": 17418883005.139637,
+        "f_end_Hz": 30197959272.274338
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 47600000000.0,
+        "delta_db": 1.439770842691546
+      }
+    ]
+  },
+  "fault_064": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.6489705632298293
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 44900000000.0,
+        "delta_db": 1.2033721781610103
+      }
+    ]
+  },
+  "fault_065": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.2226706732787016,
+        "f_start_Hz": 14485955131.810287,
+        "f_end_Hz": 21367021778.226254
+      }
+    ]
+  },
+  "fault_066": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.365575736066755
+      }
+    ]
+  },
+  "fault_067": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 6.93987885721716e-05
+      }
+    ]
+  },
+  "fault_068": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.3480045725253085
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.14515327220325297,
+        "f_start_Hz": 31032343326.40709,
+        "f_end_Hz": 46182552661.26779
+      }
+    ]
+  },
+  "fault_069": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.9732499110160038
+      }
+    ]
+  },
+  "fault_070": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -2.9679012504076657e-05
+      }
+    ]
+  },
+  "fault_071": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.903402266772098
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.14415299740317522,
+        "f_start_Hz": 25887898855.693085,
+        "f_end_Hz": 39530168306.171234
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 40700000000.0,
+        "delta_db": 2.7962513898727583
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 14250000000.0,
+        "delta_db": 1.835225986252723
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 39750000000.0,
+        "delta_db": 1.2711532816103621
+      }
+    ]
+  },
+  "fault_072": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.803383811489514
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 48000000000.0,
+        "delta_db": 3.37180232129177
+      }
+    ]
+  },
+  "fault_073": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -2.9628811540909636e-05
+      }
+    ]
+  },
+  "fault_074": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.2675077072289602
+      }
+    ]
+  },
+  "fault_075": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.394301245839597,
+        "f_start_Hz": 43993968131.28326,
+        "f_end_Hz": 54644449913.150505
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 60200000000.0,
+        "delta_db": 1.8429008994161982
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 45500000000.0,
+        "delta_db": 2.264813145925018
+      }
+    ]
+  },
+  "fault_076": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.013366367173908
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.35273567310499865,
+        "f_start_Hz": 51317420900.56434,
+        "f_end_Hz": 63989643493.41525
+      }
+    ]
+  },
+  "fault_077": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.333524307882489
+      }
+    ]
+  },
+  "fault_078": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 2.0687674477962244e-05
+      }
+    ]
+  },
+  "fault_079": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.7132905648787857
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 45950000000.0,
+        "delta_db": 1.7283792837776875
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 39800000000.0,
+        "delta_db": 2.542158233385184
+      }
+    ]
+  },
+  "fault_080": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.8548977412490608
+      }
+    ]
+  },
+  "fault_081": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.11633461207553764,
+        "f_start_Hz": 14665091047.041666,
+        "f_end_Hz": 21403783207.737083
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 42400000000.0,
+        "delta_db": 2.686610379739151
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 49400000000.0,
+        "delta_db": 1.3256564599576626
+      }
+    ]
+  },
+  "fault_082": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 8.062679778763314e-07
+      }
+    ]
+  },
+  "fault_083": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -4.552522089643719e-05
+      }
+    ]
+  },
+  "fault_084": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -7.775768727572657e-05
+      }
+    ]
+  },
+  "fault_085": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -8.161420891693514e-05
+      }
+    ]
+  },
+  "fault_086": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.8751664607609558
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.3496971913296478,
+        "f_start_Hz": 18764179569.712364,
+        "f_end_Hz": 30707935701.011974
+      }
+    ]
+  },
+  "fault_087": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.29771124309708913,
+        "f_start_Hz": 37067945145.74006,
+        "f_end_Hz": 54625571889.35632
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 5850000000.0,
+        "delta_db": 2.373521814808106
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 47950000000.0,
+        "delta_db": 3.138139171601338
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 10250000000.0,
+        "delta_db": 3.727535988321271
+      }
+    ]
+  },
+  "fault_088": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -0.00012581174833175106
+      }
+    ]
+  },
+  "fault_089": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -6.353228981976117e-05
+      }
+    ]
+  },
+  "fault_090": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.968593659708532
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 25150000000.0,
+        "delta_db": 1.241254968029399
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 49650000000.0,
+        "delta_db": 2.3287377480860583
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 14850000000.0,
+        "delta_db": 2.267624261127788
+      }
+    ]
+  },
+  "fault_091": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 1.7110850509042215
+      }
+    ]
+  },
+  "fault_092": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -7.541224915737918e-06
+      }
+    ]
+  },
+  "fault_093": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.3864206779636286
+      }
+    ]
+  },
+  "fault_094": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.4144587475617296,
+        "f_start_Hz": 13033114101.319387,
+        "f_end_Hz": 27761850215.728615
+      }
+    ]
+  },
+  "fault_095": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.3583122552610245
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 500000.0,
+        "delta_db": 3.5294919693685927
+      }
+    ]
+  },
+  "fault_096": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 1.592967929706044
+      }
+    ]
+  },
+  "fault_097": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -5.658020324629748e-06
+      }
+    ]
+  },
+  "fault_098": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.775220136387827
+      }
+    ]
+  },
+  "fault_099": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -9.706624261894248e-05
+      }
+    ]
+  },
+  "fault_100": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 60650000000.0,
+        "delta_db": 3.0341414635651924
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 2000000.0,
+        "delta_db": 3.966355096406299
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 12750000000.0,
+        "delta_db": 1.8164176224203241
+      }
+    ]
+  },
+  "fault_101": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.416002330095842
+      }
+    ]
+  },
+  "fault_102": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 1.1215265953178683e-05
+      }
+    ]
+  },
+  "fault_103": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.8253645291503475
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.11293091996099713,
+        "f_start_Hz": 53247814632.17502,
+        "f_end_Hz": 71024079569.36084
+      }
+    ]
+  },
+  "fault_104": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.9099793216351767
+      }
+    ]
+  },
+  "fault_105": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 3.992109480293332e-05
+      }
+    ]
+  },
+  "fault_106": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.6308143570439255
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 3050000000.0,
+        "delta_db": 3.3108149976077907
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 17250000000.0,
+        "delta_db": 3.720369990878326
+      }
+    ]
+  },
+  "fault_107": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -2.2287237122323155e-05
+      }
+    ]
+  },
+  "fault_108": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.9808410086027525
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.41788364270331796,
+        "f_start_Hz": 12825765135.235453,
+        "f_end_Hz": 31694311310.81369
+      }
+    ]
+  },
+  "fault_109": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5233606021476784,
+        "f_start_Hz": 5711905888.7404785,
+        "f_end_Hz": 24777505928.89327
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 3600000000.0,
+        "delta_db": 2.75811432082045
+      }
+    ]
+  },
+  "fault_110": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.1083572039274778
+      }
+    ]
+  },
+  "fault_111": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.0723674170283086
+      }
+    ]
+  },
+  "fault_112": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.63422697402494
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.12659527790343036,
+        "f_start_Hz": 33278354024.78567,
+        "f_end_Hz": 48326612356.90533
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 49550000000.0,
+        "delta_db": 2.508124075100437
+      }
+    ]
+  },
+  "fault_113": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -1.5724309384035894e-05
+      }
+    ]
+  },
+  "fault_114": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 44800000000.0,
+        "delta_db": 1.9963392834251104
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 43450000000.0,
+        "delta_db": 2.5386344847347475
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 54700000000.0,
+        "delta_db": 1.3838512945834098
+      }
+    ]
+  },
+  "fault_115": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 4.857197513718737e-05
+      }
+    ]
+  },
+  "fault_116": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 4.6030780827918014e-05
+      }
+    ]
+  },
+  "fault_117": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.7984484934070246
+      }
+    ]
+  },
+  "fault_118": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -1.513765228250694e-05
+      }
+    ]
+  },
+  "fault_119": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.3096789937959885
+      }
+    ]
+  },
+  "fault_120": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -2.0342526728466483e-05
+      }
+    ]
+  },
+  "fault_121": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 7.508735327978824e-05
+      }
+    ]
+  },
+  "fault_122": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.1834249486002015
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.1964026852782917,
+        "f_start_Hz": 7993092627.773762,
+        "f_end_Hz": 17083226455.285696
+      }
+    ]
+  },
+  "fault_123": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.3615836114544653
+      }
+    ]
+  },
+  "fault_124": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 4.892568712377265e-05
+      }
+    ]
+  },
+  "fault_125": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.2192529653882818
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 32750000000.0,
+        "delta_db": 1.0642746404971244
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 560000.0,
+        "delta_db": 3.1882086974966333
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 50000.0,
+        "delta_db": 3.2461618116250532
+      }
+    ]
+  },
+  "fault_126": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.4610619682298978
+      }
+    ]
+  },
+  "fault_127": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.983909431840099
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.45631769960985324,
+        "f_start_Hz": 14035737718.191946,
+        "f_end_Hz": 33663987502.126953
+      }
+    ]
+  },
+  "fault_128": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.7476346175526447
+      }
+    ]
+  },
+  "fault_129": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.730438709577236
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5691842049754371,
+        "f_start_Hz": 31873309060.100414,
+        "f_end_Hz": 40517158994.67293
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 36900000000.0,
+        "delta_db": 2.5587619747035775
+      }
+    ]
+  },
+  "fault_130": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -7.962940549519396e-05
+      }
+    ]
+  },
+  "fault_131": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -7.78605755892179e-06
+      }
+    ]
+  },
+  "fault_132": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.549507350353631
+      }
+    ]
+  },
+  "fault_133": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.8720818059116674
+      }
+    ]
+  },
+  "fault_134": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.7188108594011147
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5520007054964675,
+        "f_start_Hz": 43026481333.37517,
+        "f_end_Hz": 51890012820.99812
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 55800000000.0,
+        "delta_db": 1.3399395764800006
+      }
+    ]
+  },
+  "fault_135": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.4979709534664285
+      }
+    ]
+  },
+  "fault_136": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 23500000000.0,
+        "delta_db": 1.6670742430930774
+      }
+    ]
+  },
+  "fault_137": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.1856134497732458
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.37298956380527687,
+        "f_start_Hz": 51846748854.471855,
+        "f_end_Hz": 65035278310.555916
+      }
+    ]
+  },
+  "fault_138": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 2.5285865357527205e-05
+      }
+    ]
+  },
+  "fault_139": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.4896026103158115
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.6452680146052459,
+        "f_start_Hz": 17110651501.071342,
+        "f_end_Hz": 30843126973.37416
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 8900000000.0,
+        "delta_db": 1.9601237277719359
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 21200000000.0,
+        "delta_db": 2.7453848680183146
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 12550000000.0,
+        "delta_db": 1.0867513423909765
+      }
+    ]
+  },
+  "fault_140": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.505452846449749
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 23000000000.0,
+        "delta_db": 1.177310018305782
+      }
+    ]
+  },
+  "fault_141": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.6037072659692206,
+        "f_start_Hz": 32725946855.725574,
+        "f_end_Hz": 47990090889.08635
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 58400000000.0,
+        "delta_db": 3.580218052345555
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 32950000000.0,
+        "delta_db": 2.6787159078141176
+      }
+    ]
+  },
+  "fault_142": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -4.435624304846827e-06
+      }
+    ]
+  },
+  "fault_143": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.8801516933311038
+      }
+    ]
+  },
+  "fault_144": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 3.305678392648871e-05
+      }
+    ]
+  },
+  "fault_145": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -0.00012923988891809193
+      }
+    ]
+  },
+  "fault_146": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 9.307078368819091e-05
+      }
+    ]
+  },
+  "fault_147": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 2.2047572019735324e-05
+      }
+    ]
+  },
+  "fault_148": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.8100065049654678
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 30350000000.0,
+        "delta_db": 2.6325111116865827
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 52650000000.0,
+        "delta_db": 2.0886022496292043
+      }
+    ]
+  },
+  "fault_149": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.515847793360156
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.47312803247935453,
+        "f_start_Hz": 31202189645.950645,
+        "f_end_Hz": 42931551333.82541
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 57350000000.0,
+        "delta_db": 2.3980740441892068
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 14700000000.0,
+        "delta_db": 2.651171465084251
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 19800000000.0,
+        "delta_db": 1.2621370881327816
+      }
+    ]
+  },
+  "fault_150": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -1.3720949036262538e-05
+      }
+    ]
+  },
+  "fault_151": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -4.430988340284763e-05
+      }
+    ]
+  },
+  "fault_152": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -6.966266693813708e-06
+      }
+    ]
+  },
+  "fault_153": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 0.0001417288207543563
+      }
+    ]
+  },
+  "fault_154": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.1706214381096853
+      }
+    ]
+  },
+  "fault_155": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 1.6067762831292038
+      }
+    ]
+  },
+  "fault_156": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.8823321703660514
+      }
+    ]
+  },
+  "fault_157": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.6569400023030765
+      }
+    ]
+  },
+  "fault_158": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 0.00010954628505096932
+      }
+    ]
+  },
+  "fault_159": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -6.416836887566757e-05
+      }
+    ]
+  },
+  "fault_160": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.2520891278537674,
+        "f_start_Hz": 7816266115.296522,
+        "f_end_Hz": 18130936993.817123
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 5550000000.0,
+        "delta_db": 3.3293408319303954
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 8000000000.0,
+        "delta_db": 1.2461352503721947
+      }
+    ]
+  },
+  "fault_161": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.16543188087467348,
+        "f_start_Hz": 45653790091.030754,
+        "f_end_Hz": 53249233805.600525
+      }
+    ]
+  },
+  "fault_162": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.402151936303667
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 27200000000.0,
+        "delta_db": 3.3525552593816452
+      }
+    ]
+  },
+  "fault_163": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.029109298183653
+      }
+    ]
+  },
+  "fault_164": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.7344441077257605
+      }
+    ]
+  },
+  "fault_165": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 15350000000.0,
+        "delta_db": 3.707110638667736
+      }
+    ]
+  },
+  "fault_166": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.1372890006520695
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.26247361374511397,
+        "f_start_Hz": 17004442593.095732,
+        "f_end_Hz": 30890443374.140373
+      }
+    ]
+  },
+  "fault_167": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.91623250764383
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.13669129829893928,
+        "f_start_Hz": 18133481574.188744,
+        "f_end_Hz": 37721176826.09332
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 560000.0,
+        "delta_db": 2.1804103133195136
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 12250000000.0,
+        "delta_db": 1.1217010169093988
+      }
+    ]
+  },
+  "fault_168": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 2.379784079697527
+      }
+    ]
+  },
+  "fault_169": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -0.5225919397519134
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.10551145194269522,
+        "f_start_Hz": 20203758973.70922,
+        "f_end_Hz": 30062993068.307674
+      }
+    ]
+  },
+  "fault_170": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 6.92720998722247e-05
+      }
+    ]
+  },
+  "fault_171": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 6.407871159328277e-06
+      }
+    ]
+  },
+  "fault_172": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.7052895323095515
+      }
+    ]
+  },
+  "fault_173": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.4760915297400734
+      }
+    ]
+  },
+  "fault_174": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.7317950008450183
+      }
+    ]
+  },
+  "fault_175": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 1.9975422293046081
+      }
+    ]
+  },
+  "fault_176": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.01976347256545
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.2831127593593293,
+        "f_start_Hz": 47784391396.78175,
+        "f_end_Hz": 66146909116.80591
+      }
+    ]
+  },
+  "fault_177": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -8.066022976224107e-06
+      }
+    ]
+  },
+  "fault_178": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.6256330681337771
+      }
+    ]
+  },
+  "fault_179": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.563685435435258
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "light",
+        "pk2pk_db": 0.1469205093082831,
+        "f_start_Hz": 3631534457.6995215,
+        "f_end_Hz": 21736189375.249355
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 39850000000.0,
+        "delta_db": 1.4577755232111902
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 19850000000.0,
+        "delta_db": 2.4164255485295767
+      }
+    ]
+  },
+  "fault_180": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -1.978235861612636e-05
+      }
+    ]
+  },
+  "fault_181": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 2.502270460059354e-05
+      }
+    ]
+  },
+  "fault_182": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.2956718924387403
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5870296059873011,
+        "f_start_Hz": 31531450608.639862,
+        "f_end_Hz": 47655603795.591736
+      }
+    ]
+  },
+  "fault_183": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.8283621283695357
+      }
+    ]
+  },
+  "fault_184": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -4.70960645814609e-05
+      }
+    ]
+  },
+  "fault_185": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": 1.4617626461819681e-05
+      }
+    ]
+  },
+  "fault_186": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.7648830531090132
+      }
+    ]
+  },
+  "fault_187": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.828186924399916
+      }
+    ]
+  },
+  "fault_188": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.1340976797228146
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.3792925782539568,
+        "f_start_Hz": 3994447439.595157,
+        "f_end_Hz": 19000553794.404053
+      }
+    ]
+  },
+  "fault_189": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -2.5972717664542703e-05
+      }
+    ]
+  },
+  "fault_190": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -4.620130588696703e-06
+      }
+    ]
+  },
+  "fault_191": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 1.8475409111956797e-05
+      }
+    ]
+  },
+  "fault_192": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.6740546240570282,
+        "f_start_Hz": 42410088193.55887,
+        "f_end_Hz": 58410793233.97506
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 360000.0,
+        "delta_db": 3.977788824832129
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 50200000000.0,
+        "delta_db": 1.2102514913859
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 63800000000.0,
+        "delta_db": 3.0535852411211537
+      }
+    ]
+  },
+  "fault_193": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -4.101864193071667e-05
+      }
+    ]
+  },
+  "fault_194": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.0687275650514663
+      }
+    ]
+  },
+  "fault_195": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 8.461614294145748e-05
+      }
+    ]
+  },
+  "fault_196": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "heavy",
+        "delta_db": -3.566219862534178
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.34697914685258396,
+        "f_start_Hz": 20847458296.871025,
+        "f_end_Hz": 29952883941.015892
+      }
+    ]
+  },
+  "fault_197": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -2.0363458039766548e-05
+      }
+    ]
+  },
+  "fault_198": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -1.9459711449945795e-05
+      }
+    ]
+  },
+  "fault_199": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.0835555459443555
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.5588314433008594,
+        "f_start_Hz": 28965946406.24498,
+        "f_end_Hz": 47976686278.22743
+      }
+    ]
+  },
+  "fault_200": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -2.212581031979028e-05
+      }
+    ]
+  },
+  "fault_201": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -1.077356981099464e-05
+      }
+    ]
+  },
+  "fault_202": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.9160729463218511
+      }
+    ]
+  },
+  "fault_203": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.389175694153252
+      }
+    ]
+  },
+  "fault_204": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "light",
+        "eps": -4.7783156181819186e-05
+      }
+    ]
+  },
+  "fault_205": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.6736858709445053
+      }
+    ]
+  },
+  "fault_206": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.38285002430978976,
+        "f_start_Hz": 47209751318.44212,
+        "f_end_Hz": 65449041115.04164
+      }
+    ]
+  },
+  "fault_207": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 29900000000.0,
+        "delta_db": 1.8282461028220574
+      }
+    ]
+  },
+  "fault_208": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": -6.530544765449744e-05
+      }
+    ]
+  },
+  "fault_209": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": []
+  },
+  "fault_210": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.6865076540463684
+      }
+    ]
+  },
+  "fault_211": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -0.00014141167436524854
+      }
+    ]
+  },
+  "fault_212": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "light",
+        "delta_db": -1.2167261527576894
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.32294926845030375,
+        "f_start_Hz": 40555816641.809235,
+        "f_end_Hz": 51917516079.228745
+      }
+    ]
+  },
+  "fault_213": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.5832708788765035
+      },
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "heavy",
+        "pk2pk_db": 0.551596260255918,
+        "f_start_Hz": 41330814625.33186,
+        "f_end_Hz": 60135823148.772156
+      }
+    ]
+  },
+  "fault_214": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": -6.70548802727247e-05
+      }
+    ]
+  },
+  "fault_215": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "medium",
+        "delta_db": 1.0191639811304332
+      }
+    ]
+  },
+  "fault_216": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": []
+  },
+  "fault_217": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.703223926523231
+      }
+    ]
+  },
+  "fault_218": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "heavy",
+        "eps": 3.4460021793126594e-05
+      }
+    ]
+  },
+  "fault_219": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -2.9759029811878324
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "medium",
+        "center_Hz": 2500000000.0,
+        "delta_db": 2.8023855373791524
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "light",
+        "center_Hz": 48600000000.0,
+        "delta_db": 1.129906462146813
+      },
+      {
+        "module": "Connector/Match",
+        "type": "point_spike",
+        "severity": "heavy",
+        "center_Hz": 51600000000.0,
+        "delta_db": 3.8008565004225345
+      }
+    ]
+  },
+  "fault_220": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "light",
+        "delta_db": 0.9821942058933719
+      }
+    ]
+  },
+  "fault_221": {
+    "type": "fault",
+    "system_fault_class": "ref_error",
+    "faults": [
+      {
+        "module": "CalSource/RefAmp",
+        "type": "ref_level",
+        "severity": "heavy",
+        "delta_db": 1.5278390093930683
+      }
+    ]
+  },
+  "fault_222": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "PreAmp/IFAmp",
+        "type": "ripple",
+        "severity": "medium",
+        "pk2pk_db": 0.2754448332129587,
+        "f_start_Hz": 50284687313.2998,
+        "f_end_Hz": 70315512323.79913
+      }
+    ]
+  },
+  "fault_223": {
+    "type": "fault",
+    "system_fault_class": "amp_error",
+    "faults": [
+      {
+        "module": "Attenuator/Gain",
+        "type": "amplitude_offset",
+        "severity": "medium",
+        "delta_db": -1.7049264382065572
+      }
+    ]
+  },
+  "fault_224": {
+    "type": "fault",
+    "system_fault_class": "freq_error",
+    "faults": [
+      {
+        "module": "LO/Clock",
+        "type": "freq_scale",
+        "severity": "medium",
+        "eps": 8.67929027853127e-05
+      }
+    ]
+  }
+}
