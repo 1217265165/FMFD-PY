@@ -10,11 +10,11 @@ visualize_results.py
     * 每簇的特征摘要 CSV
  - 输出文件夹: ./viz_outputs/
  - 直接运行示例:
-   E:\Anaconda3\envs\tf_12\python.exe D:\PycharmProjects\FMFD\V2\visualize_results.py
+
 
 说明:
  - 此版本已固定输入路径为:
-     D:\PycharmProjects\FMFD\V2\run_test_features_enhanced.csv
+
  - 改进点:
    * 修复 dendrogram 的输入（对观测矩阵直接做 linkage，先 PCA 降维）
    * 自动估计 DBSCAN eps（k-distance percentile）并打印建议值
@@ -291,9 +291,9 @@ def feature_importance_with_label(df, feature_cols, label_col, out_dir='viz_outp
 # --------------------------
 if __name__ == "__main__":
     # 固定输入文件（已按你要求指定）
-    input_csv = r"D:\PycharmProjects\FMFD\V2\run_test_features_enhanced.csv"
+    input_csv = r""
     prefix = "run_test"
-    outdir = r"D:\PycharmProjects\FMFD\V2\viz_outputs"
+    outdir = r""
     n_clusters = 4
     label_col = None  # 若有标签列可填写，例如 "true_module"
 

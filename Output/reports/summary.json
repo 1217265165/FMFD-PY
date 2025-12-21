@@ -1,0 +1,10 @@
+{
+  "system_overall_acc": 0.2,
+  "system_per_class": {
+    "amp_error": 0.036036036036036036,
+    "freq_error": 0.6029411764705882,
+    "ref_error": 0.0
+  },
+  "module_overall_acc": null,
+  "module_per_module": null
+}

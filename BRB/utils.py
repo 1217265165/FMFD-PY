@@ -7,9 +7,19 @@ class BRBRule:
     weight: float
     belief: Dict[str, float]  # label -> degree
 
+def normalize_feature(x, low, high, floor=1e-3):
+    """线性归一到[0,1]，低于low→floor，高于high→1，留一点最小激活以避免全 0。"""
+    if x <= low:
+        return floor
+    if x >= high:
+        return 1.0
+    return max(floor, (x - low) / (high - low))
+
 class SimpleBRB:
     """
-    简化的ER组合：对所有规则的激活度加权归一，再加权合成后归一。
+    简化的ER组合：
+    - 若 len(matching_degrees)==len(rules)，每条规则用对应的匹配度（常见一前件一规则）
+    - 否则用乘积，乘积为 0 时用均值兜底，避免全 0。
     """
     def __init__(self, labels: List[str], rules: List[BRBRule]):
         self.labels = labels
@@ -17,8 +27,14 @@ class SimpleBRB:
 
     def infer(self, matching_degrees: List[float]) -> Dict[str, float]:
         activations = []
-        for r in self.rules:
-            act = r.weight * np.prod(matching_degrees)
+        use_one_to_one = len(matching_degrees) == len(self.rules)
+        for i, r in enumerate(self.rules):
+            if use_one_to_one:
+                act_raw = matching_degrees[i]
+            else:
+                prod = np.prod(matching_degrees)
+                act_raw = prod if prod > 1e-6 else float(np.mean(matching_degrees))
+            act = r.weight * act_raw
             activations.append((act, r.belief))
         total = sum(a for a, _ in activations) + 1e-9
         out = {lab: 0.0 for lab in self.labels}
@@ -29,11 +45,3 @@ class SimpleBRB:
         for lab in self.labels:
             out[lab] = out[lab] / s
         return out
-
-def normalize_feature(x, low, high):
-    """线性归一化到[0,1]，低于low→0，高于high→1。"""
-    if x <= low:
-        return 0.0
-    if x >= high:
-        return 1.0
-    return (x - low) / (high - low)
