@@ -123,6 +123,19 @@ class MethodComparison:
         
         return "未知"
     
+    def map_module_label(self, sample_id: str, labels_json: Dict) -> str:
+        """Map sample to module-level label (true faulty module)."""
+        info = labels_json.get(sample_id, {})
+        if not isinstance(info, dict):
+            return None
+        
+        if info.get("type") == "normal":
+            return None  # No faulty module
+        
+        # Get the true faulty module
+        module = info.get("module", None)
+        return module
+    
     def evaluate_method(self, method_name: str, df: pd.DataFrame,
                        labels_json: Dict) -> Dict:
         """Evaluate a single method."""
@@ -260,16 +273,151 @@ class MethodComparison:
         
         return results
     
+    def evaluate_module_level(self, method_name: str, df: pd.DataFrame,
+                             labels_json: Dict) -> Dict:
+        """Evaluate module-level fault probability prediction."""
+        print(f"\n评估模块级诊断: {method_name}")
+        
+        method = self.methods[method_name]
+        
+        # Module labels
+        module_labels = [
+            "衰减器", "前置放大器", "低频段前置低通滤波器", "低频段第一混频器",
+            "高频段YTF滤波器", "高频段混频器", "时钟振荡器", "时钟合成与同步网络",
+            "本振源（谐波发生器）", "本振混频组件", "校准源", "存储器", "校准信号开关",
+            "中频放大器", "ADC", "数字RBW", "数字放大器", "数字检波器",
+            "VBW滤波器", "电源模块", "未定义/其他"
+        ]
+        
+        # Track predictions
+        true_modules = []
+        pred_modules = []
+        top3_hit_count = 0
+        top5_hit_count = 0
+        mrr_scores = []  # Mean Reciprocal Rank
+        avg_probabilities = {module: [] for module in module_labels}
+        
+        for idx, row in df.iterrows():
+            sample_id = str(row["sample_id"])
+            true_module = self.map_module_label(sample_id, labels_json)
+            
+            # Skip normal samples (no faulty module)
+            if true_module is None:
+                continue
+            
+            features = self.extract_features(row)
+            
+            # Get system-level prediction first
+            if method_name == "本文方法":
+                sys_probs = system_level_infer(features, mode="er")
+                module_probs = module_level_infer(features, sys_probs)
+            else:
+                sys_probs = method.infer_system(features)
+                module_probs = method.infer_module(features, sys_probs)
+            
+            # Record probabilities for each module
+            for module in module_labels:
+                avg_probabilities[module].append(module_probs.get(module, 0.0))
+            
+            # Get top predictions
+            sorted_modules = sorted(module_probs.items(), key=lambda x: x[1], reverse=True)
+            top_module = sorted_modules[0][0]
+            top3_modules = [m[0] for m in sorted_modules[:3]]
+            top5_modules = [m[0] for m in sorted_modules[:5]]
+            
+            true_modules.append(true_module)
+            pred_modules.append(top_module)
+            
+            # Calculate metrics
+            if true_module in top3_modules:
+                top3_hit_count += 1
+            if true_module in top5_modules:
+                top5_hit_count += 1
+            
+            # Calculate reciprocal rank
+            for rank, (module, _) in enumerate(sorted_modules, 1):
+                if module == true_module:
+                    mrr_scores.append(1.0 / rank)
+                    break
+            else:
+                mrr_scores.append(0.0)
+        
+        total_fault_samples = len(true_modules)
+        if total_fault_samples == 0:
+            print("警告: 没有故障样本用于模块级评估")
+            return {}
+        
+        # Calculate metrics
+        top1_accuracy = accuracy_score(true_modules, pred_modules)
+        top3_accuracy = top3_hit_count / total_fault_samples
+        top5_accuracy = top5_hit_count / total_fault_samples
+        mrr = np.mean(mrr_scores) if mrr_scores else 0.0
+        
+        # Per-module statistics
+        module_stats = {}
+        for module in module_labels:
+            if avg_probabilities[module]:
+                module_stats[module] = {
+                    "平均概率": np.mean(avg_probabilities[module]),
+                    "标准差": np.std(avg_probabilities[module]),
+                    "最大值": np.max(avg_probabilities[module])
+                }
+        
+        results = {
+            "total_fault_samples": total_fault_samples,
+            "top1_accuracy": top1_accuracy,
+            "top3_accuracy": top3_accuracy,
+            "top5_accuracy": top5_accuracy,
+            "mrr": mrr,
+            "module_stats": module_stats,
+            "true_modules": true_modules,
+            "pred_modules": pred_modules
+        }
+        
+        print(f"故障样本数: {total_fault_samples}")
+        print(f"Top-1 准确率: {top1_accuracy:.4f}")
+        print(f"Top-3 准确率: {top3_accuracy:.4f}")
+        print(f"Top-5 准确率: {top5_accuracy:.4f}")
+        print(f"MRR: {mrr:.4f}")
+        
+        return results
+    
     def run_comparison(self):
         """Run comparison for all methods."""
         df, labels_json = self.load_data()
         
+        # System-level evaluation
+        print("\n" + "="*60)
+        print("第一步: 系统级异常类型诊断评估")
+        print("="*60)
         for method_name in self.methods.keys():
             try:
                 result = self.evaluate_method(method_name, df, labels_json)
                 self.results[method_name] = result
             except Exception as e:
                 print(f"错误: 评估 {method_name} 时出错: {e}")
+                import traceback
+                traceback.print_exc()
+        
+        # Module-level evaluation
+        print("\n" + "="*60)
+        print("第二步: 模块级故障概率诊断评估")
+        print("="*60)
+        self.module_results = {}
+        for method_name in self.methods.keys():
+            try:
+                module_result = self.evaluate_module_level(method_name, df, labels_json)
+                self.module_results[method_name] = module_result
+                # Add module results to main results
+                if method_name in self.results:
+                    self.results[method_name].update({
+                        "module_top1_acc": module_result.get("top1_accuracy", 0.0),
+                        "module_top3_acc": module_result.get("top3_accuracy", 0.0),
+                        "module_top5_acc": module_result.get("top5_accuracy", 0.0),
+                        "module_mrr": module_result.get("mrr", 0.0)
+                    })
+            except Exception as e:
+                print(f"错误: 评估 {method_name} 模块级诊断时出错: {e}")
                 import traceback
                 traceback.print_exc()
     
@@ -519,6 +667,38 @@ class MethodComparison:
                     0.15 * (1 - result['num_parameters'] / max_params)
                 )
                 f.write(f"{method_name}: {score:.4f}\n")
+            
+            # Add module-level results
+            if hasattr(self, 'module_results') and self.module_results:
+                f.write(f"\n\n{'='*80}\n")
+                f.write("模块级故障概率诊断对比 (NEW)\n")
+                f.write(f"{'='*80}\n\n")
+                f.write("说明: 模块级诊断评估各方法输出的模块故障概率因子的准确性\n")
+                f.write("      这是最终诊断结果，对实际维修决策至关重要\n\n")
+                
+                for method_name, module_result in self.module_results.items():
+                    if not module_result:
+                        continue
+                    f.write(f"\n{method_name}:\n")
+                    f.write(f"  故障样本数: {module_result.get('total_fault_samples', 0)}\n")
+                    f.write(f"  Top-1准确率: {module_result.get('top1_accuracy', 0.0):.4f}\n")
+                    f.write(f"  Top-3准确率: {module_result.get('top3_accuracy', 0.0):.4f}\n")
+                    f.write(f"  Top-5准确率: {module_result.get('top5_accuracy', 0.0):.4f}\n")
+                    f.write(f"  MRR (平均倒数排名): {module_result.get('mrr', 0.0):.4f}\n")
+                
+                # Find best module-level performance
+                if self.module_results:
+                    best_top1 = max(self.module_results.items(),
+                                  key=lambda x: x[1].get('top1_accuracy', 0.0) if x[1] else 0.0)
+                    best_top3 = max(self.module_results.items(),
+                                  key=lambda x: x[1].get('top3_accuracy', 0.0) if x[1] else 0.0)
+                    best_mrr = max(self.module_results.items(),
+                                 key=lambda x: x[1].get('mrr', 0.0) if x[1] else 0.0)
+                    
+                    f.write(f"\n模块级关键指标:")
+                    f.write(f"\n  最高Top-1准确率: {best_top1[0]} ({best_top1[1].get('top1_accuracy', 0.0):.4f})\n")
+                    f.write(f"  最高Top-3准确率: {best_top3[0]} ({best_top3[1].get('top3_accuracy', 0.0):.4f})\n")
+                    f.write(f"  最高MRR: {best_mrr[0]} ({best_mrr[1].get('mrr', 0.0):.4f})\n")
         
         print(f"总结报告已保存到: {output_path}")
     
@@ -706,6 +886,106 @@ class MethodComparison:
         print(f"详细指标表已保存到: {output_path}")
         print("\n详细指标对比:")
         print(df.to_string(index=False))
+    
+    def generate_module_metrics_table(self, output_path: Path = None):
+        """Generate module-level metrics comparison table."""
+        if output_path is None:
+            output_path = self.output_dir / "module_metrics.csv"
+        
+        table_data = []
+        
+        for method_name, module_result in self.module_results.items():
+            if not module_result:
+                continue
+            
+            row = {
+                "方法": method_name,
+                "故障样本数": module_result.get("total_fault_samples", 0),
+                "Top-1准确率": f"{module_result.get('top1_accuracy', 0.0):.4f}",
+                "Top-3准确率": f"{module_result.get('top3_accuracy', 0.0):.4f}",
+                "Top-5准确率": f"{module_result.get('top5_accuracy', 0.0):.4f}",
+                "MRR": f"{module_result.get('mrr', 0.0):.4f}"
+            }
+            table_data.append(row)
+        
+        df = pd.DataFrame(table_data)
+        df.to_csv(output_path, index=False, encoding='utf-8-sig')
+        
+        print(f"\n模块级指标表已保存到: {output_path}")
+        print("\n模块级诊断对比:")
+        print(df.to_string(index=False))
+    
+    def plot_module_comparison(self, output_path: Path = None):
+        """Plot module-level performance comparison."""
+        if output_path is None:
+            output_path = self.output_dir / "module_comparison.png"
+        
+        if not self.module_results:
+            print("警告: 无模块级结果可视化")
+            return
+        
+        fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+        
+        methods = list(self.module_results.keys())
+        colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+        
+        # 1. Top-K Accuracy comparison
+        ax1 = axes[0]
+        x = np.arange(len(methods))
+        width = 0.25
+        
+        top1_data = [self.module_results[m].get('top1_accuracy', 0.0) * 100 for m in methods]
+        top3_data = [self.module_results[m].get('top3_accuracy', 0.0) * 100 for m in methods]
+        top5_data = [self.module_results[m].get('top5_accuracy', 0.0) * 100 for m in methods]
+        
+        ax1.bar(x - width, top1_data, width, label='Top-1', color=colors[0], alpha=0.8)
+        ax1.bar(x, top3_data, width, label='Top-3', color=colors[1], alpha=0.8)
+        ax1.bar(x + width, top5_data, width, label='Top-5', color=colors[2], alpha=0.8)
+        
+        ax1.set_xlabel('方法', fontsize=11)
+        ax1.set_ylabel('准确率 (%)', fontsize=11)
+        ax1.set_title('模块级Top-K准确率对比', fontsize=12, fontweight='bold')
+        ax1.set_xticks(x)
+        ax1.set_xticklabels([m.split('(')[0].strip() for m in methods], fontsize=9, rotation=15, ha='right')
+        ax1.legend(fontsize=10)
+        ax1.grid(True, alpha=0.3, axis='y')
+        ax1.set_ylim(0, 105)
+        
+        # Add value labels
+        for i, method in enumerate(methods):
+            ax1.text(i - width, top1_data[i] + 2, f'{top1_data[i]:.1f}', 
+                    ha='center', va='bottom', fontsize=8)
+            ax1.text(i, top3_data[i] + 2, f'{top3_data[i]:.1f}', 
+                    ha='center', va='bottom', fontsize=8)
+            ax1.text(i + width, top5_data[i] + 2, f'{top5_data[i]:.1f}', 
+                    ha='center', va='bottom', fontsize=8)
+        
+        # 2. MRR comparison
+        ax2 = axes[1]
+        mrr_data = [self.module_results[m].get('mrr', 0.0) * 100 for m in methods]
+        
+        bars = ax2.bar(x, mrr_data, color=colors[:len(methods)], alpha=0.7, edgecolor='black', linewidth=1.5)
+        
+        ax2.set_xlabel('方法', fontsize=11)
+        ax2.set_ylabel('MRR (%)', fontsize=11)
+        ax2.set_title('平均倒数排名(MRR)对比', fontsize=12, fontweight='bold')
+        ax2.set_xticks(x)
+        ax2.set_xticklabels([m.split('(')[0].strip() for m in methods], fontsize=9, rotation=15, ha='right')
+        ax2.grid(True, alpha=0.3, axis='y')
+        ax2.set_ylim(0, 105)
+        
+        # Add value labels
+        for bar, val in zip(bars, mrr_data):
+            height = bar.get_height()
+            ax2.text(bar.get_x() + bar.get_width()/2., height + 2,
+                    f'{val:.1f}',
+                    ha='center', va='bottom', fontsize=10, fontweight='bold')
+        
+        plt.tight_layout()
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        plt.close()
+        
+        print(f"模块级对比图已保存到: {output_path}")
 
 
 def main():
@@ -722,6 +1002,7 @@ def main():
     comparison.generate_comparison_table()
     comparison.generate_performance_table()
     comparison.generate_detailed_metrics_table()
+    comparison.generate_module_metrics_table()  # NEW
     
     # Generate visualizations
     print("\n生成可视化图表...")
@@ -729,12 +1010,14 @@ def main():
     comparison.plot_confusion_matrices()
     comparison.plot_radar_chart()
     comparison.plot_metrics_bar_chart()
+    comparison.plot_module_comparison()  # NEW
     
     # Generate summary
     comparison.generate_summary_report()
     
     print("\n✓ 对比评估完成！所有结果已保存到 Output/comparison_results/")
     print("\n生成的文件:")
+    print("  【系统级诊断对比】")
     print("  - comparison_table.csv        # 方法对比表")
     print("  - performance_table.csv       # 性能细分表")
     print("  - detailed_metrics.csv        # 详细指标表")
@@ -742,6 +1025,10 @@ def main():
     print("  - confusion_matrices.png      # 混淆矩阵对比")
     print("  - radar_comparison.png        # 雷达图综合对比")
     print("  - metrics_bar_chart.png       # 详细指标柱状图")
+    print("\n  【模块级诊断对比】(NEW)")
+    print("  - module_metrics.csv          # 模块级指标表")
+    print("  - module_comparison.png       # 模块级Top-K准确率&MRR对比")
+    print("\n  【综合报告】")
     print("  - comparison_summary.txt      # 文本总结报告")
 
 
