@@ -2,6 +2,33 @@
 
 本模块实现了与其他分层诊断方法的对比实验，包括：
 
+## 环境设置
+
+**重要**: 代码使用 `FMFD` 包名导入。在运行前，需要在父目录创建符号链接：
+
+```bash
+cd /home/runner/work/FMFD-PY
+ln -s FMFD-PY FMFD
+```
+
+或者在你的工作目录中：
+
+```bash
+# 假设你在 /path/to/FMFD-PY 目录
+cd ..
+ln -s FMFD-PY FMFD
+cd FMFD-PY
+```
+
+之后可以使用以下方式运行脚本：
+
+```bash
+# 从父目录运行
+cd /path/to  # FMFD 符号链接所在目录
+python -m FMFD.comparison.demo
+python -m FMFD.pipelines.compare_methods
+```
+
 ## 对比方法
 
 ### 1. HCF (Zhang et al., 2022)
@@ -78,8 +105,18 @@
 
 ## 使用方法
 
+### 0. 环境准备（必需）
+
+创建 FMFD 符号链接（如果还没有）:
+
+```bash
+cd /home/runner/work/FMFD-PY  # 或你的工作目录的父目录
+ln -s FMFD-PY FMFD
+```
+
 ### 1. 运行基线数据生成
 ```bash
+cd /home/runner/work/FMFD-PY  # FMFD 符号链接所在目录
 python -m FMFD.pipelines.run_babeline
 ```
 

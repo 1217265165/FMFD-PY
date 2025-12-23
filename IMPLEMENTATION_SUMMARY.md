@@ -101,23 +101,37 @@
 
 ## 使用方法
 
+### 环境准备
+
+**重要**: 在运行任何脚本前，需要创建 FMFD 符号链接：
+
+```bash
+# 进入仓库父目录
+cd /home/runner/work/FMFD-PY
+
+# 创建符号链接（如果还没有）
+ln -s FMFD-PY FMFD
+```
+
 ### 运行完整对比评估
 
 ```bash
 # 1. 生成仿真数据（如果还没有）
+cd /home/runner/work/FMFD-PY
 python -m FMFD.pipelines.simulate.run_sinulation_brb
 
 # 2. 运行对比评估
 python -m FMFD.pipelines.compare_methods
 
 # 3. 查看结果
-# 结果保存在 Output/sim_spectrum/ 目录
+# 结果保存在 FMFD-PY/Output/sim_spectrum/ 目录
 ```
 
 ### 运行演示脚本
 
 ```bash
-python comparison/demo.py
+cd /home/runner/work/FMFD-PY
+python -m FMFD.comparison.demo
 ```
 
 ## 关键发现

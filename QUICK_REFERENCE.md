@@ -1,5 +1,24 @@
 # 对比方法快速参考指南
 
+## 环境设置（重要）
+
+在使用对比方法前，需要创建 FMFD 符号链接：
+
+```bash
+# 进入仓库父目录
+cd /home/runner/work/FMFD-PY  # 或你的工作目录父目录
+
+# 创建符号链接（如果还没有）
+ln -s FMFD-PY FMFD
+
+# 验证链接
+ls -la | grep FMFD
+# 应该看到: lrwxrwxrwx ... FMFD -> FMFD-PY
+```
+
+**为什么需要这个？**  
+代码使用 `from FMFD.xxx import` 格式，符号链接使 Python 能够将 `FMFD-PY` 目录识别为 `FMFD` 包。
+
 ## 新增文件列表
 
 ### 核心实现文件
@@ -26,20 +45,23 @@ pipelines/
 
 ### 1. 运行对比评估（一键生成所有结果）
 ```bash
-cd /home/runner/work/FMFD-PY/FMFD-PY
-python -m pipelines.compare_methods
+# 确保在 FMFD 符号链接的父目录
+cd /home/runner/work/FMFD-PY
+python -m FMFD.pipelines.compare_methods
 ```
 
 **输出**:
-- `Output/sim_spectrum/comparison_table.csv` - 方法对比表
-- `Output/sim_spectrum/performance_table.csv` - 性能详细表  
-- `Output/sim_spectrum/comparison_plot.png` - 对比图表
-- `Output/sim_spectrum/confusion_matrices.png` - 混淆矩阵
-- `Output/sim_spectrum/comparison_summary.txt` - 文字报告
+- `FMFD-PY/Output/sim_spectrum/comparison_table.csv` - 方法对比表
+- `FMFD-PY/Output/sim_spectrum/performance_table.csv` - 性能详细表  
+- `FMFD-PY/Output/sim_spectrum/comparison_plot.png` - 对比图表
+- `FMFD-PY/Output/sim_spectrum/confusion_matrices.png` - 混淆矩阵
+- `FMFD-PY/Output/sim_spectrum/comparison_summary.txt` - 文字报告
 
 ### 2. 查看演示（理解如何使用）
 ```bash
-python comparison/demo.py
+# 从 FMFD 符号链接父目录运行
+cd /home/runner/work/FMFD-PY
+python -m FMFD.comparison.demo
 ```
 
 **展示**:

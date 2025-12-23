@@ -27,14 +27,11 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 # Import comparison methods
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from comparison.hcf import HCFMethod
-from comparison.brb_p import BRBPMethod
-from comparison.er_c import ERCMethod
-from BRB.system_brb import system_level_infer
-from BRB.module_brb import module_level_infer
+from FMFD.comparison.hcf import HCFMethod
+from FMFD.comparison.brb_p import BRBPMethod
+from FMFD.comparison.er_c import ERCMethod
+from FMFD.BRB.system_brb import system_level_infer
+from FMFD.BRB.module_brb import module_level_infer
 
 # Chinese font support
 plt.rcParams["font.sans-serif"] = ["SimHei", "Microsoft YaHei", "Arial"]

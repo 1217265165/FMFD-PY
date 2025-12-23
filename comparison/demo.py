@@ -6,16 +6,10 @@
 这个脚本展示如何使用各个对比方法对单个样本进行诊断推理。
 """
 
-import sys
-from pathlib import Path
-
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
 import numpy as np
-from comparison import HCFMethod, BRBPMethod, ERCMethod
-from BRB.system_brb import system_level_infer
-from BRB.module_brb import module_level_infer
+from FMFD.comparison import HCFMethod, BRBPMethod, ERCMethod
+from FMFD.BRB.system_brb import system_level_infer
+from FMFD.BRB.module_brb import module_level_infer
 
 
 def demo_single_sample():
