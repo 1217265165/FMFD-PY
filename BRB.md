@@ -3,7 +3,7 @@ python -m FMFD.pipelines.run_babeline
 python -m FMFD.pipelines.simulate.run_sinulation_brb
 python -m FMFD.pipelines.detect
 python -m FMFD.tools.brb_report  # 如果放在 FMFD/tools 下
-
+python -m FMFD.pipelines.eval_system_level
 
 # BRB 两层方案（21 模块）使用说明
 

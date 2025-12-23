@@ -86,6 +86,7 @@ def main():
 
         feats = extract_system_features(frequency, rrs, bounds, band_ranges, amp)
         sys_probs = system_level_infer(feats)
+        # sys_probs = system_level_infer(feats, mode="simple")
         mod_probs = module_level_infer(feats, sys_probs)
         flags = apply_thresholds(feats, thresholds)
 

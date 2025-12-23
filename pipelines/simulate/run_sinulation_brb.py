@@ -367,7 +367,7 @@ def main():
             freq_arr = freqs
 
         feats = extract_system_features(freqs, rrs, bounds, BAND_RANGES, amp_arr)
-        raw_sys_p = system_level_infer(feats)
+        raw_sys_p = system_level_infer(feats, mode="er")  # 新 ER 版（默认）
 
         if len(rows) < 5:
             print("[DEBUG] raw_sys_p:", raw_sys_p)
