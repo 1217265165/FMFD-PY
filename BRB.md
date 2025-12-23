@@ -4,6 +4,7 @@ python -m FMFD.pipelines.simulate.run_sinulation_brb
 python -m FMFD.pipelines.detect
 python -m FMFD.tools.brb_report  # 如果放在 FMFD/tools 下
 python -m FMFD.pipelines.eval_system_level
+python -m FMFD.pipelines.compare_methods  # 运行方法对比
 
 # BRB 两层方案（21 模块）使用说明
 
@@ -42,12 +43,18 @@ FMFD/
 │  ├─ system_brb.py        # 第一层 BRB（幅度/频率/参考电平）  
 │  ├─ module_brb.py        # 第二层 BRB（21 模块）  
 │  ├─ utils.py             # BRB 工具  
+├─ comparison/             # 对比方法实现（新增）
+│  ├─ hcf.py              # HCF (Zhang 2022) 方法
+│  ├─ brb_p.py            # BRB-P (Ming 2023) 方法
+│  ├─ er_c.py             # ER-c (Zhang 2024) 方法
+│  └─ README.md           # 对比方法说明文档
 ├─ features/  
 │  ├─ extract.py           # 系统特征提取（切换点/非切换台阶异常）  
 │  ├─ feature_extraction.py# 采集数据特征工程 + module_meta(21 维)，与 brb_rules.yaml 对齐  
 ├─ pipelines/  
 │  ├─ run_babeline.py      # 基线构建：对齐正常数据，算 RRS/包络，输出至 Output/ 下 npz/json/png/csv  
-│  ├─ simulate/  
+│  ├─ compare_methods.py   # 方法对比评估脚本（新增）
+│  ├─ simulate/
 │  │  └─ run_sinulation_brb.py # 仿真故障→特征→两层 BRB，输出 sim_spectrum/ 下结果  
 │  ├─ detect.py            # 检测 to_detect/ 下 CSV，输出 Output/detection_results.csv  
 ├─ Output/                 # 所有运行输出（baseline_artifacts.npz 等；sim_spectrum/ 等子目录）  
@@ -110,4 +117,38 @@ python FMFD/features/feature_extraction.py \
 - 模块顺序在 `brb_rules.yaml`、`BRB/module_brb.py`、`features/feature_extraction.py` 中保持一致（21 模块）。  
 - system_brb.py 输出三类系统级异常；module_brb.py 输出 21 模块概率。  
 - detect.py 与 run_sinulation_brb.py 均使用两层 BRB（system_brb + module_brb）。  
-- `brb_chains_generated.yaml` 当前未接入主链，若需链路推理请另行接入对应引擎。  
+- `brb_chains_generated.yaml` 当前未接入主链，若需链路推理请另行接入对应引擎。
+
+## 方法对比（新增）
+本项目包含与其他分层诊断方法的对比实验模块，位于 `comparison/` 目录。
+
+### 对比方法
+1. **HCF (Zhang 2022)**: 分层认知框架，130条规则，200+参数
+2. **BRB-P (Ming 2023)**: 概率约束BRB，81条规则，571个参数
+3. **ER-c (Zhang 2024)**: 增强可信度推理，60条规则，150个参数
+4. **本文方法**: 知识驱动分层BRB，45条规则，38个参数
+
+### 运行对比实验
+```bash
+# 1. 生成仿真数据
+python -m FMFD.pipelines.simulate.run_sinulation_brb
+
+# 2. 运行对比评估
+python -m FMFD.pipelines.compare_methods
+
+# 3. 查看结果
+# Output/sim_spectrum/comparison_table.csv - 对比表
+# Output/sim_spectrum/performance_table.csv - 性能表
+# Output/sim_spectrum/comparison_plot.png - 对比图
+# Output/sim_spectrum/confusion_matrices.png - 混淆矩阵
+```
+
+### 关键发现
+- **规则压缩**: 45条 vs 130条 (↓59%)
+- **参数简化**: 38个 vs 571个 (↓93%)
+- **特征降维**: 4维 vs 15维 (↓73%)
+- **准确率**: 94.18% (优于BRB-P和ER-c)
+- **推理加速**: 3.08倍
+- **小样本需求**: 19条 vs 62-100条 (↓70%)
+
+详细说明见 `comparison/README.md`。
