@@ -41,12 +41,22 @@ plt.rcParams["axes.unicode_minus"] = False
 class MethodComparison:
     """Compare different hierarchical BRB methods."""
     
-    def __init__(self, data_dir: Path = None):
+    def __init__(self, data_dir: Path = None, output_dir: Path = None):
         if data_dir is None:
             repo_root = Path(__file__).resolve().parents[1]
             self.data_dir = repo_root / "Output" / "sim_spectrum"
         else:
             self.data_dir = Path(data_dir)
+        
+        # Separate output directory for comparison results
+        if output_dir is None:
+            repo_root = Path(__file__).resolve().parents[1]
+            self.output_dir = repo_root / "Output" / "comparison_results"
+        else:
+            self.output_dir = Path(output_dir)
+        
+        # Create output directory
+        self.output_dir.mkdir(parents=True, exist_ok=True)
         
         self.methods = {
             "HCF (Zhang 2022)": HCFMethod(),
@@ -217,7 +227,7 @@ class MethodComparison:
     def generate_comparison_table(self, output_path: Path = None):
         """Generate comparison table (Table 3-2 style)."""
         if output_path is None:
-            output_path = self.data_dir / "comparison_table.csv"
+            output_path = self.output_dir / "comparison_table.csv"
         
         # Prepare table data
         table_data = []
@@ -270,7 +280,7 @@ class MethodComparison:
     def generate_performance_table(self, output_path: Path = None):
         """Generate performance breakdown table (Table 3-3 style)."""
         if output_path is None:
-            output_path = self.data_dir / "performance_table.csv"
+            output_path = self.output_dir / "performance_table.csv"
         
         # Prepare per-class performance data
         table_data = []
@@ -292,7 +302,7 @@ class MethodComparison:
     def plot_comparison(self, output_path: Path = None):
         """Plot accuracy vs rules comparison (Figure 3-4 style)."""
         if output_path is None:
-            output_path = self.data_dir / "comparison_plot.png"
+            output_path = self.output_dir / "comparison_plot.png"
         
         fig, ax = plt.subplots(figsize=(10, 6))
         
@@ -327,7 +337,7 @@ class MethodComparison:
     def plot_confusion_matrices(self, output_path: Path = None):
         """Plot confusion matrices for all methods."""
         if output_path is None:
-            output_path = self.data_dir / "confusion_matrices.png"
+            output_path = self.output_dir / "confusion_matrices.png"
         
         n_methods = len(self.results)
         fig, axes = plt.subplots(2, 2, figsize=(14, 12))
@@ -374,7 +384,7 @@ class MethodComparison:
     def generate_summary_report(self, output_path: Path = None):
         """Generate comprehensive summary report."""
         if output_path is None:
-            output_path = self.data_dir / "comparison_summary.txt"
+            output_path = self.output_dir / "comparison_summary.txt"
         
         with open(output_path, "w", encoding="utf-8") as f:
             f.write("="*80 + "\n")

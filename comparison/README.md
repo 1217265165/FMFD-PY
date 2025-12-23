@@ -132,13 +132,16 @@ python -m FMFD.pipelines.compare_methods
 
 ### 4. 查看对比结果
 
-对比结果保存在 `Output/sim_spectrum/` 目录下：
+对比结果保存在 `Output/comparison_results/` 目录下：
 
 - `comparison_table.csv` - 方法对比表（Table 3-2）
 - `performance_table.csv` - 性能细分表（Table 3-3）
 - `comparison_plot.png` - 准确率-规则数权衡图（Figure 3-4）
 - `confusion_matrices.png` - 各方法混淆矩阵
 - `comparison_summary.txt` - 详细对比报告
+
+**注意**: 仿真数据CSV文件（normal_*.csv, fault_*.csv）保存在 `Output/sim_spectrum/` 目录，
+而对比分析结果保存在 `Output/comparison_results/` 目录，便于区分数据和分析结果。
 
 
 ## 对比指标
@@ -156,6 +159,47 @@ python -m FMFD.pipelines.compare_methods
 ### 3. 小样本适应性
 - **参数-样本比**：参数充足度
 - **推荐样本需求**：最小样本量估计
+
+
+## 集成工具使用
+
+### 真实数据分析
+
+当处理真实采集数据时，可以结合 `feature_extraction` 和 `visualize_results` 工具：
+
+**1. 特征提取（feature_extraction.py）**
+
+从真实测量数据提取特征和模块元信息：
+
+```bash
+cd /home/runner/work/FMFD-PY
+python -m FMFD.features.feature_extraction \
+  --input path/to/acquired_measurements.csv \
+  --prefix real_data \
+  --out_dir ./Output
+```
+
+输出:
+- `real_data_features_enhanced.csv` - 增强特征
+- `real_data_module_meta.csv` - 模块置信度
+- `real_data_feature_summary.csv` - 特征摘要
+
+**2. 结果可视化（visualize_results.py）**
+
+可视化特征分布、聚类和模块置信度：
+
+```bash
+cd /home/runner/work/FMFD-PY
+python -m FMFD.pipelines.visualize_results
+```
+
+输出到 `viz_outputs/` 目录：
+- 模块置信热图
+- 特征相关性热图
+- PCA聚类可视化
+- 特征重要性分析
+
+这些工具可与对比方法结合使用，对真实数据进行全面分析。
 
 
 ## 关键发现

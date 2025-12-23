@@ -48,7 +48,7 @@
   - 生成对比表格和可视化
 
 #### 输出文件
-评估脚本自动生成以下文件（保存在 `Output/sim_spectrum/`）：
+评估脚本自动生成以下文件（保存在 `Output/comparison_results/`）：
 
 1. **comparison_table.csv** - 方法对比表（对应论文Table 3-2）
    - 总规则数
@@ -68,6 +68,10 @@
 
 5. **comparison_summary.txt** - 详细对比报告
    - 包含所有指标的文字总结
+
+**目录结构**:
+- `Output/sim_spectrum/` - 仿真数据CSV文件（normal_*.csv, fault_*.csv）及特征文件
+- `Output/comparison_results/` - 对比分析结果（表格、图表、报告）
 
 ### 3. 文档和示例
 

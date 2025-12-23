@@ -51,11 +51,13 @@ python -m FMFD.pipelines.compare_methods
 ```
 
 **输出**:
-- `FMFD-PY/Output/sim_spectrum/comparison_table.csv` - 方法对比表
-- `FMFD-PY/Output/sim_spectrum/performance_table.csv` - 性能详细表  
-- `FMFD-PY/Output/sim_spectrum/comparison_plot.png` - 对比图表
-- `FMFD-PY/Output/sim_spectrum/confusion_matrices.png` - 混淆矩阵
-- `FMFD-PY/Output/sim_spectrum/comparison_summary.txt` - 文字报告
+- `FMFD-PY/Output/comparison_results/comparison_table.csv` - 方法对比表
+- `FMFD-PY/Output/comparison_results/performance_table.csv` - 性能详细表  
+- `FMFD-PY/Output/comparison_results/comparison_plot.png` - 对比图表
+- `FMFD-PY/Output/comparison_results/confusion_matrices.png` - 混淆矩阵
+- `FMFD-PY/Output/comparison_results/comparison_summary.txt` - 文字报告
+
+**注意**: 仿真CSV数据在 `Output/sim_spectrum/`，对比结果在 `Output/comparison_results/`
 
 ### 2. 查看演示（理解如何使用）
 ```bash
