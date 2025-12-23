@@ -154,11 +154,18 @@ class MethodComparison:
             
             # Get prediction
             if true_label == "正常":
-                # For normal samples, check if all fault probs are low
+                # For normal samples, use improved threshold
                 max_prob = max(sys_probs.values())
-                pred_label = "正常" if max_prob < 0.5 else max(sys_probs, key=sys_probs.get)
+                # Lower threshold to 0.3 for better normal detection
+                pred_label = "正常" if max_prob < 0.3 else max(sys_probs, key=sys_probs.get)
             else:
-                pred_label = max(sys_probs, key=sys_probs.get)
+                # For fault samples, predict the fault type with highest probability
+                max_prob = max(sys_probs.values())
+                # Only predict fault if confidence is above threshold
+                if max_prob < 0.3:
+                    pred_label = "正常"
+                else:
+                    pred_label = max(sys_probs, key=sys_probs.get)
             
             predictions.append(pred_label)
             true_labels.append(true_label)
