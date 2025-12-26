@@ -123,18 +123,28 @@ class MethodComparison:
         
         return "未知"
     
-    def map_module_label(self, sample_id: str, labels_json: Dict) -> str:
-        """Map sample to module-level label (true faulty module)."""
+    def map_module_label(self, sample_id: str, labels_json: Dict) -> List[str]:
+        """Map sample to module-level labels (true faulty modules).
+        Returns list of faulty modules for this sample."""
         info = labels_json.get(sample_id, {})
         if not isinstance(info, dict):
-            return None
+            return []
         
         if info.get("type") == "normal":
-            return None  # No faulty module
+            return []  # No faulty modules
         
-        # Get the true faulty module
-        module = info.get("module", None)
-        return module
+        # Get the true faulty modules from faults list
+        faults = info.get("faults", [])
+        if not faults:
+            return []
+        
+        # Extract unique module names from all faults
+        modules = set()
+        for fault in faults:
+            if isinstance(fault, dict) and "module" in fault:
+                modules.add(fault["module"])
+        
+        return list(modules)
     
     def evaluate_method(self, method_name: str, df: pd.DataFrame,
                        labels_json: Dict) -> Dict:
@@ -290,20 +300,36 @@ class MethodComparison:
         ]
         
         # Track predictions
-        true_modules = []
-        pred_modules = []
+        all_true_modules = []  # For all samples (may have multiple modules per sample)
+        all_pred_modules = []  # Top-1 predictions
         top3_hit_count = 0
         top5_hit_count = 0
         mrr_scores = []  # Mean Reciprocal Rank
         avg_probabilities = {module: [] for module in module_labels}
         
+        # Map module names from labels.json to our module_labels
+        module_name_map = {
+            "Attenuator/Gain": "衰减器",
+            "PreAmp/IFAmp": "前置放大器",
+            "LO/Clock": "本振源（谐波发生器）",
+            "CalSource/RefAmp": "校准源",
+            "Connector/Match": "未定义/其他",
+            # Add more mappings as needed
+        }
+        
         for idx, row in df.iterrows():
             sample_id = str(row["sample_id"])
-            true_module = self.map_module_label(sample_id, labels_json)
+            true_modules_raw = self.map_module_label(sample_id, labels_json)
             
-            # Skip normal samples (no faulty module)
-            if true_module is None:
+            # Skip normal samples (no faulty modules)
+            if not true_modules_raw:
                 continue
+            
+            # Map module names to Chinese
+            true_modules_mapped = []
+            for mod in true_modules_raw:
+                mapped = module_name_map.get(mod, "未定义/其他")
+                true_modules_mapped.append(mapped)
             
             features = self.extract_features(row)
             
@@ -325,30 +351,38 @@ class MethodComparison:
             top3_modules = [m[0] for m in sorted_modules[:3]]
             top5_modules = [m[0] for m in sorted_modules[:5]]
             
-            true_modules.append(true_module)
-            pred_modules.append(top_module)
+            # For evaluation, use the primary (first) true module
+            primary_true_module = true_modules_mapped[0]
+            all_true_modules.append(primary_true_module)
+            all_pred_modules.append(top_module)
             
-            # Calculate metrics
-            if true_module in top3_modules:
+            # Calculate hit metrics - hit if ANY true module is in top-K
+            hit_top3 = any(m in top3_modules for m in true_modules_mapped)
+            hit_top5 = any(m in top5_modules for m in true_modules_mapped)
+            
+            if hit_top3:
                 top3_hit_count += 1
-            if true_module in top5_modules:
+            if hit_top5:
                 top5_hit_count += 1
             
-            # Calculate reciprocal rank
+            # Calculate reciprocal rank - use best (highest) rank among all true modules
+            best_rank = float('inf')
             for rank, (module, _) in enumerate(sorted_modules, 1):
-                if module == true_module:
-                    mrr_scores.append(1.0 / rank)
-                    break
+                if module in true_modules_mapped:
+                    best_rank = min(best_rank, rank)
+            
+            if best_rank != float('inf'):
+                mrr_scores.append(1.0 / best_rank)
             else:
                 mrr_scores.append(0.0)
         
-        total_fault_samples = len(true_modules)
+        total_fault_samples = len(all_true_modules)
         if total_fault_samples == 0:
             print("警告: 没有故障样本用于模块级评估")
             return {}
         
         # Calculate metrics
-        top1_accuracy = accuracy_score(true_modules, pred_modules)
+        top1_accuracy = accuracy_score(all_true_modules, all_pred_modules)
         top3_accuracy = top3_hit_count / total_fault_samples
         top5_accuracy = top5_hit_count / total_fault_samples
         mrr = np.mean(mrr_scores) if mrr_scores else 0.0
@@ -370,8 +404,8 @@ class MethodComparison:
             "top5_accuracy": top5_accuracy,
             "mrr": mrr,
             "module_stats": module_stats,
-            "true_modules": true_modules,
-            "pred_modules": pred_modules
+            "true_modules": all_true_modules,
+            "pred_modules": all_pred_modules
         }
         
         print(f"故障样本数: {total_fault_samples}")
